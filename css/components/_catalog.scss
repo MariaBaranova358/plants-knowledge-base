@@ -3,6 +3,14 @@
     padding-top: 80px;
     background-color: $light-bg;
     min-height: 100vh;
+
+
+}
+
+@media (max-width: 767px) {
+    .catalog-page {
+        padding-top: 30px;
+    }
 }
 
 // Поисковая строка 
@@ -14,29 +22,29 @@
         overflow: hidden;
         transition: all 0.3s ease;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        
+
         &:focus-within {
             border-color: $success;
             box-shadow: 0 4px 15px rgba($success, 0.15);
         }
-        
+
         .input-group-text {
             border: none;
             background: transparent;
             color: $success;
             font-size: 1.1rem;
         }
-        
+
         .form-control {
             border: none;
             box-shadow: none;
             font-size: 1rem;
             padding: 0.75rem 0;
-            
+
             &::placeholder {
                 color: #adb5bd;
             }
-            
+
             &:focus {
                 box-shadow: none;
             }
@@ -50,12 +58,12 @@
     border-radius: 12px;
     font-weight: 600;
     transition: all 0.3s ease;
-    
+
     &:hover {
         transform: translateY(-2px);
         box-shadow: 0 5px 20px rgba($success, 0.3);
     }
-    
+
     &:active {
         transform: translateY(0);
     }
@@ -65,6 +73,10 @@
     .row {
         --bs-gutter-x: 1.5rem;
         --bs-gutter-y: 1.5rem;
+
+        @media (max-width: 767px) {
+            margin-top: -1rem !important;
+        }
     }
 }
 
@@ -78,7 +90,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    width: 100%; 
+    width: 100%;
 }
 
 .plant-card:hover {
@@ -90,7 +102,7 @@
 .plant-image-container {
     position: relative;
     width: 100%;
-    height: 434px; 
+    height: 434px;
     overflow: hidden;
     border-radius: 6px 6px 0 0;
 }
@@ -133,16 +145,16 @@
     font-size: 14px;
     color: $text;
     font-style: italic;
-    margin: 5px 0 0 0; 
+    margin: 5px 0 0 0;
     line-height: 1.4;
 }
 
 
 .plant-meta {
-    margin: 15px 0 0 0; 
+    margin: 15px 0 0 0;
     display: flex;
     flex-direction: column;
-    gap: 5px; 
+    gap: 5px;
 }
 
 .meta-row {
@@ -230,12 +242,12 @@
     #plantsGrid {
         .col-lg-4 {
             flex: 0 0 auto;
-            width: 33.33333333%; 
+            width: 33.33333333%;
         }
     }
-    
+
     .plant-card {
-        max-width: 380px; 
+        max-width: 380px;
         margin: 0 auto;
     }
 }
@@ -245,14 +257,14 @@
     #plantsGrid {
         .col-md-6 {
             flex: 0 0 auto;
-            width: 50%; 
+            width: 50%;
         }
     }
-    
+
     .plant-image-container {
         height: 380px;
     }
-    
+
     .plant-card {
         max-width: 340px;
         margin: 0 auto;
@@ -267,24 +279,24 @@
             width: 100%;
         }
     }
-    
+
     .plant-card {
         max-width: 328px;
         margin: 0 auto;
     }
-    
+
     .plant-image-container {
         height: 320px;
     }
-    
+
     .plant-info {
         padding: 13px 15px;
     }
-    
+
     .plant-actions {
         padding: 0 15px 15px;
     }
-    
+
     .search-wrapper,
     .btn-success {
         width: 100%;
@@ -295,19 +307,19 @@
     .plant-image-container {
         height: 280px;
     }
-    
+
     .plant-name {
         font-size: 16px;
     }
-    
+
     .plant-latin-name {
         font-size: 13px;
     }
-    
+
     .meta-label {
         font-size: 13px;
     }
-    
+
     .difficulty-badge,
     .plant-type-badge {
         font-size: 11px;
@@ -320,13 +332,13 @@
     .offcanvas-header {
         border-bottom: 1px solid rgba($success, 0.1);
         padding: 1.5rem;
-        
+
         .offcanvas-title {
             color: $dark-color;
             font-weight: 700;
         }
     }
-    
+
     .offcanvas-body {
         padding: 1.5rem;
     }
@@ -338,37 +350,37 @@
         font-weight: 600;
         font-size: 1rem;
     }
-    
+
     .form-check {
         padding-left: 0;
         margin-bottom: 0.5rem;
         display: flex;
-        
+
         .form-check-input {
             margin-top: 0.25rem;
             margin-left: 0;
             border-color: rgba($success, 0.5);
-            
+
             &:checked {
                 background-color: $success;
                 border-color: $success;
             }
-            
+
             &:focus {
                 box-shadow: 0 0 0 0.25rem rgba($success, 0.25);
             }
         }
-        
+
         .form-check-label {
             margin-left: 1.5rem;
             cursor: pointer;
             color: #495057;
             font-size: 0.95rem;
-            
+
             &:hover {
                 color: $dark-color;
             }
-            
+
             i {
                 color: $success;
                 width: 20px;
@@ -390,21 +402,21 @@
 .pagination {
     .page-item {
         margin: 0 0.25rem;
-        
+
         .page-link {
             border: 1px solid rgba($success, 0.2);
             color: $dark-color;
             border-radius: 8px;
             padding: 0.5rem 1rem;
             transition: all 0.3s ease;
-            
+
             &:hover {
                 background-color: rgba($success, 0.1);
                 border-color: $success;
                 color: $success;
             }
         }
-        
+
         &.active {
             .page-link {
                 background-color: $success;
@@ -412,7 +424,7 @@
                 color: $white;
             }
         }
-        
+
         &.disabled {
             .page-link {
                 color: #adb5bd;
@@ -429,6 +441,7 @@
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -442,10 +455,10 @@
 // Загрузка
 .loading-placeholder {
     .plant-card {
-        background: linear-gradient(90deg, 
-            rgba($success, 0.05) 25%, 
-            rgba($success, 0.1) 50%, 
-            rgba($success, 0.05) 75%);
+        background: linear-gradient(90deg,
+                rgba($success, 0.05) 25%,
+                rgba($success, 0.1) 50%,
+                rgba($success, 0.05) 75%);
         background-size: 200% 100%;
         animation: loading 1.5s infinite;
     }
@@ -455,6 +468,7 @@
     0% {
         background-position: 200% 0;
     }
+
     100% {
         background-position: -200% 0;
     }

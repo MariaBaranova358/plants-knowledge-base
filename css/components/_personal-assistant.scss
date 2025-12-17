@@ -235,7 +235,7 @@ $card-height: 230px;
 
 @media (max-width: 576px) {
     .cards {
-        padding: 2rem 0;
+        padding:2rem 0 0 0 !important;
     }
     
     .plant-feature-card.mb-4,
