@@ -1,0 +1,43 @@
+.navbar-plant {
+    background: rgba(147, 162, 103, 0.7);
+    backdrop-filter: blur(10px);
+
+    .navbar-brand {
+        font-weight: 600;
+
+        &:hover {
+            color: #1a252f;
+        }
+    }
+
+    .nav-link {
+        color: #485935;
+        position: relative;
+        padding: 0.5rem 1rem;
+        margin: 0 0.25rem;
+        transition: all 0.3s ease;
+        font-size: 24px;
+
+        &:hover,
+        &.active {
+            background-color: transparent;
+            font-weight: 600;
+            color: #485935;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    .navbar-toggler {
+        border-color: rgba(44, 62, 80, 0.2);
+    }
+
+    // Для мобильного меню
+    @media (max-width: 991px) {
+        .navbar-collapse {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            padding: 1rem;
+        }
+    }
+}

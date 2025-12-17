@@ -1,0 +1,219 @@
+.popular-plants {
+    background: $light-bg;
+    padding: 4rem 0;
+
+    h2 {
+        color: $text;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+}
+
+.slider-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+
+    @media (max-width: 1480px) {
+        padding: 0 40px;
+    }
+}
+
+.plant-slider {
+    width: 100%;
+    padding: 20px 10px 50px;
+
+    .swiper-wrapper {
+        align-items: center;
+    }
+}
+
+.plant-card {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+    box-shadow: 0 8px 25px $shadow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px $shadow-hover;
+
+        .plant-img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.plant-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.plant-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.plant-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    color: white;
+}
+
+.plant-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@mixin card-height($height) {
+    .plant-card {
+        height: $height;
+    }
+}
+
+@media (max-width: 1200px) {
+    @include card-height(360px);
+}
+
+@media (max-width: 992px) {
+    @include card-height(320px);
+}
+
+@media (max-width: 768px) {
+    @include card-height(280px);
+}
+
+@media (max-width: 576px) {
+    @include card-height(250px);
+}
+
+.slider-nav {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px $shadow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+
+    &:hover {
+        background: $success;
+        color: white;
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 6px 20px rgba(147, 162, 103, 0.3);
+    }
+
+    i {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
+
+        i {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.slider-prev {
+    left: -25px;
+
+    @media (max-width: 1480px) {
+        left: 10px;
+    }
+
+    @media (max-width: 768px) {
+        left: 5px;
+    }
+}
+
+.slider-next {
+    right: -25px;
+
+    @media (max-width: 1480px) {
+        right: 10px;
+    }
+
+    @media (max-width: 768px) {
+        right: 5px;
+    }
+}
+
+// Пагинация
+.slider-pagination {
+    bottom: 10px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgba($dark-color, 0.3);
+    opacity: 1;
+    transition: all 0.3s ease;
+
+    &-active {
+        background: $success;
+        transform: scale(1.3);
+    }
+}
+
+// Кнопка каталога
+.catalog-btn {
+    background: $success;
+    color: white;
+    padding: 12px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid $success;
+
+    &:hover {
+        background: transparent;
+        color: $success;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px $shadow-success;
+    }
+
+    i {
+        transition: transform 0.3s ease;
+    }
+
+    &:hover i {
+        transform: translateX(3px);
+    }
+}
+
+
+body {
+    overflow-x: hidden;
+}

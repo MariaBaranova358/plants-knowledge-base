@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог комнатных растений | Зелёный календарь</title>
+
+    <!-- Подключение фавикона -->
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <meta name="theme-color" content="#93A267">
+    <meta name="msapplication-TileColor" content="#93A267">
+    <meta name="application-name" content="Зеленый Календарь">
+    <meta name="apple-mobile-web-app-title" content="Зеленый Календарь">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-plant fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success me-4" href="index.html">
+                <img src="images/logo.svg" alt="Логотип" height="70">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="catalog.html">Каталог растений</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="catalog-page">
+        <div class="catalog-header pt-5">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h1 class="display-5 fw-bold mb-3">Каталог комнатных растений</h1>
+                        <p class="lead">Найдите идеальное растение для вашего дома</p>
+                    </div>
+                </div>
+
+                <!-- Строка поиска и фильтров-->
+                <div class="row align-items-center mb-4">
+                    <!-- На планшетах (768px-992px) и телефонах: колонка поиска на всю ширину -->
+                    <div class="col-12 col-md-8 col-lg-8 mb-3 mb-md-0">
+                        <div class="search-wrapper">
+                            <div class="input-group search-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="bi bi-search text-muted"></i>
+                                </span>
+                                <input type="text" class="form-control border-start-0 ps-0"
+                                    placeholder="Поиск по названию растения..." id="plantSearch">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- На планшетах (768px-992px): кнопка фильтров на всю ширину строки -->
+                    <div class="col-12 col-md-4 col-lg-4 d-md-none d-lg-block">
+                        <button class="btn btn-success w-100 px-4" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#filterOffcanvas">
+                            <i class="bi bi-sliders me-2"></i>Фильтры
+                        </button>
+                    </div>
+
+                    <!-- На телефонах (<768px): кнопка под поиском -->
+                    <div class="col-12 d-none d-md-block d-lg-none mt-3">
+                        <button class="btn btn-success w-100 px-4" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#filterOffcanvas">
+                            <i class="bi bi-sliders me-2"></i>Фильтры
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Сетка растений -->
+        <div class="catalog-grid">
+            <div class="container">
+                <div class="row g-4" id="plantsGrid">
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <nav aria-label="Навигация по страницам">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Боковая панель фильтров (Offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="filterOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Фильтры растений</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="filter-section mb-4">
+                <h6 class="filter-title mb-3">
+                    <i class="bi bi-speedometer2 me-2"></i>Сложность ухода
+                </h6>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="filterEasy" checked>
+                    <label class="form-check-label w-100 d-flex align-items-center" for="filterEasy">
+
+                        <span>Лёгкий уход</span>
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="filterMedium" checked>
+                    <label class="form-check-label w-100 d-flex align-items-center" for="filterMedium">
+
+                        <span>Средний уход</span>
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="filterHard" checked>
+                    <label class="form-check-label w-100 d-flex align-items-center" for="filterHard">
+
+                        <span>Сложный уход</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Тип растения -->
+            <div class="filter-section mb-4">
+                <h6 class="filter-title mb-3">
+                    <i class="bi bi-flower1 me-2"></i>Тип растения
+                </h6>
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary w-100 text-start dropdown-toggle" type="button"
+                        id="plantTypeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Все типы
+                    </button>
+                    <ul class="dropdown-menu w-100" aria-labelledby="plantTypeDropdown">
+                        <li>
+                            <a class="dropdown-item" href="#" data-type="all">
+                                Все типы
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" data-type="decorative">
+                                Декоративнолистные
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" data-type="succulent">
+                                Суккуленты
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" data-type="flowering">
+                                Цветущие
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" data-type="liana">
+                                Лианы
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" data-type="fern">
+                                Папоротники
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" data-type="ampel">
+                                Ампельные
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" data-type="palm">
+                                Пальмы и древовидные
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-2" id="selectedTypes"></div>
+            </div>
+
+            <!-- Кнопки фильтров -->
+            <div class="filter-buttons mt-5">
+                <button class="btn btn-success w-100 mb-2" id="applyFilters">
+                    <i class="bi bi-filter me-2"></i>Применить фильтры
+                </button>
+                <button class="btn btn-outline-success w-100" id="resetFilters">
+                    <i class="bi bi-arrow-clockwise me-2"></i>Сбросить все
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="brand-text">ЗЕЛЁНЫЙ КАЛЕНДАРЬ</span>
+                </div>
+
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <div class="footer-message">
+                    <i class="bi bi-heart-fill"></i>
+                    <span>С любовью о ваших растениях</span>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 База знаний о домашних растениях с подбором графика полива
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

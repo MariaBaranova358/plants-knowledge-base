@@ -1,0 +1,461 @@
+// Основная страница каталога
+.catalog-page {
+    padding-top: 80px;
+    background-color: $light-bg;
+    min-height: 100vh;
+}
+
+// Поисковая строка 
+.search-wrapper {
+    .search-group {
+        background: $white;
+        border: 2px solid rgba($success, 0.2);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        
+        &:focus-within {
+            border-color: $success;
+            box-shadow: 0 4px 15px rgba($success, 0.15);
+        }
+        
+        .input-group-text {
+            border: none;
+            background: transparent;
+            color: $success;
+            font-size: 1.1rem;
+        }
+        
+        .form-control {
+            border: none;
+            box-shadow: none;
+            font-size: 1rem;
+            padding: 0.75rem 0;
+            
+            &::placeholder {
+                color: #adb5bd;
+            }
+            
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+
+.btn-success {
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba($success, 0.3);
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.catalog-grid {
+    .row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+}
+
+
+.plant-card {
+    border: 1px solid $light-green;
+    border-radius: 6px;
+    overflow: hidden;
+    background: $white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}
+
+.plant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px $shadow;
+}
+
+
+.plant-image-container {
+    position: relative;
+    width: 100%;
+    height: 434px; 
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+}
+
+.plant-image-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.plant-card:hover .plant-image-main {
+    transform: scale(1.05);
+}
+
+.plant-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 70%, $shadow);
+}
+
+
+.plant-info-card {
+    padding: 13px 20px;
+    flex-grow: 1;
+}
+
+.plant-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: $text;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.plant-latin-name {
+    font-size: 14px;
+    color: $text;
+    font-style: italic;
+    margin: 5px 0 0 0; 
+    line-height: 1.4;
+}
+
+
+.plant-meta {
+    margin: 15px 0 0 0; 
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+}
+
+.meta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.meta-label {
+    font-size: 14px;
+    color: $text;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+/* Бейджи (с закруглением 6px) */
+.difficulty-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    border: none;
+    height: fit-content;
+}
+
+.badge-easy {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.badge-medium {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.badge-hard {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+.plant-type-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border: none;
+    height: fit-content;
+}
+
+
+.plant-actions {
+    padding: 0 20px 20px;
+    margin-top: auto;
+}
+
+.view-plant {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-width: 2px;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.view-plant:hover {
+    background-color: #204110;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+
+@media (min-width: 992px) {
+    #plantsGrid {
+        .col-lg-4 {
+            flex: 0 0 auto;
+            width: 33.33333333%; 
+        }
+    }
+    
+    .plant-card {
+        max-width: 380px; 
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 991px) and (min-width: 768px) {
+    #plantsGrid {
+        .col-md-6 {
+            flex: 0 0 auto;
+            width: 50%; 
+        }
+    }
+    
+    .plant-image-container {
+        height: 380px;
+    }
+    
+    .plant-card {
+        max-width: 340px;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 767px) {
+    #plantsGrid {
+        .col-12 {
+            flex: 0 0 auto;
+            width: 100%;
+        }
+    }
+    
+    .plant-card {
+        max-width: 328px;
+        margin: 0 auto;
+    }
+    
+    .plant-image-container {
+        height: 320px;
+    }
+    
+    .plant-info {
+        padding: 13px 15px;
+    }
+    
+    .plant-actions {
+        padding: 0 15px 15px;
+    }
+    
+    .search-wrapper,
+    .btn-success {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .plant-image-container {
+        height: 280px;
+    }
+    
+    .plant-name {
+        font-size: 16px;
+    }
+    
+    .plant-latin-name {
+        font-size: 13px;
+    }
+    
+    .meta-label {
+        font-size: 13px;
+    }
+    
+    .difficulty-badge,
+    .plant-type-badge {
+        font-size: 11px;
+        padding: 0.2rem 0.5rem;
+    }
+}
+
+
+.offcanvas {
+    .offcanvas-header {
+        border-bottom: 1px solid rgba($success, 0.1);
+        padding: 1.5rem;
+        
+        .offcanvas-title {
+            color: $dark-color;
+            font-weight: 700;
+        }
+    }
+    
+    .offcanvas-body {
+        padding: 1.5rem;
+    }
+}
+
+.filter-section {
+    .filter-title {
+        color: $dark-color;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    
+    .form-check {
+        padding-left: 0;
+        margin-bottom: 0.5rem;
+        display: flex;
+        
+        .form-check-input {
+            margin-top: 0.25rem;
+            margin-left: 0;
+            border-color: rgba($success, 0.5);
+            
+            &:checked {
+                background-color: $success;
+                border-color: $success;
+            }
+            
+            &:focus {
+                box-shadow: 0 0 0 0.25rem rgba($success, 0.25);
+            }
+        }
+        
+        .form-check-label {
+            margin-left: 1.5rem;
+            cursor: pointer;
+            color: #495057;
+            font-size: 0.95rem;
+            
+            &:hover {
+                color: $dark-color;
+            }
+            
+            i {
+                color: $success;
+                width: 20px;
+            }
+        }
+    }
+}
+
+.filter-buttons {
+    .btn {
+        border-radius: 10px;
+        padding: 0.75rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+}
+
+// Пагинация
+.pagination {
+    .page-item {
+        margin: 0 0.25rem;
+        
+        .page-link {
+            border: 1px solid rgba($success, 0.2);
+            color: $dark-color;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background-color: rgba($success, 0.1);
+                border-color: $success;
+                color: $success;
+            }
+        }
+        
+        &.active {
+            .page-link {
+                background-color: $success;
+                border-color: $success;
+                color: $white;
+            }
+        }
+        
+        &.disabled {
+            .page-link {
+                color: #adb5bd;
+                border-color: rgba($success, 0.1);
+                background-color: $white;
+            }
+        }
+    }
+}
+
+// Анимации
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.plant-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+// Загрузка
+.loading-placeholder {
+    .plant-card {
+        background: linear-gradient(90deg, 
+            rgba($success, 0.05) 25%, 
+            rgba($success, 0.1) 50%, 
+            rgba($success, 0.05) 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+    }
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

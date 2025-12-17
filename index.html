@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зелёный календарь | Главная</title>
+
+    <!-- Подключение фавикона -->
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <meta name="theme-color" content="#93A267">
+    <meta name="msapplication-TileColor" content="#93A267">
+    <meta name="application-name" content="Зеленый Календарь">
+    <meta name="apple-mobile-web-app-title" content="Зеленый Календарь">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-plant fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success me-4" href="index.html">
+                <img src="images/logo.svg" alt="Логотип" height="70">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Каталог растений</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Здоровые растения без лишних хлопот</h1>
+                    <p class="lead mb-4">Персональный график ухода для каждого вашего растения</p>
+                    <a href="catalog.html" class="btn btn-success px-4">
+                        К растениям
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cards py-5 bg-light">
+        <div class="container" style="max-width: 1392px;">
+            <h2 class="text-center mb-5">Ваш персональный помощник</h2>
+
+            <div class="row gx-5 align-items-start">
+                <div class="col-lg-4 d-flex flex-column align-items-center align-items-lg-end order-lg-0 order-1">
+                    <!-- Карточка 1 -->
+                    <div class="plant-feature-card mb-4 mb-lg-4">
+                        <div class="card-icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <h3 class="card-title">Персональный график полива</h3>
+                        <p class="card-text">Умный алгоритм рассчитает идеальную частоту полива именно
+                            для вашего растения, горшка и условий в квартире.</p>
+                    </div>
+
+                    <!-- Карточка 2 -->
+                    <div class="plant-feature-card mb-4 mb-lg-0">
+                        <div class="card-icon">
+                            <i class="bi bi-book"></i>
+                        </div>
+                        <h3 class="card-title">Обширная база знаний</h3>
+                        <p class="card-text">Подробные карточки растений с научными названиями,
+                            фотографиями и чёткими требованиями к содержанию.</p>
+                    </div>
+                </div>
+
+                <!-- Центральная картинка -->
+                <div class="col-lg-4 d-flex align-items-center justify-content-center order-lg-1 order-0 mb-4 mb-lg-0">
+                    <div class="features-image-container">
+                        <img src="images/two-plants.png" alt="Два растения" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 d-flex flex-column align-items-center align-items-lg-start order-lg-2 order-2">
+                    <!-- Карточка 3 -->
+                    <div class="plant-feature-card mb-4 mb-lg-4">
+                        <div class="card-icon">
+                            <i class="bi bi-clock"></i>
+                        </div>
+                        <h3 class="card-title">Экономия времени</h3>
+                        <p class="card-text">Больше не нужно тратить время на поиск разрозненных
+                            советов или покупать новые растения из-за ошибок в уходе.</p>
+                    </div>
+
+                    <!-- Карточка 4 -->
+                    <div class="plant-feature-card">
+                        <div class="card-icon">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <h3 class="card-title">Доступ всегда и везде</h3>
+                        <p class="card-text">Сайт отлично работает на телефоне, планшете и
+                            компьютере. Ваш персональный садовник всегда в кармане.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="popular-plants py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Популярные растения</h2>
+        </div>
+
+        <!-- Слайдер -->
+        <div class="slider-container">
+            <button class="slider-nav slider-prev">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+
+            <div class="swiper plant-slider">
+                <div class="swiper-wrapper">
+                    <!-- Слайд 1 -->
+                    <div class="swiper-slide">
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="images/monstera.jpg" alt="Монстера" class="plant-img">
+                                <div class="plant-overlay">
+                                    <h3 class="plant-title">Монстера</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Слайд 2 -->
+                    <div class="swiper-slide">
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="images/sansiveria.jpg" alt="Сансевиерия" class="plant-img">
+                                <div class="plant-overlay">
+                                    <h3 class="plant-title">Сансевиерия</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Слайд 3 -->
+                    <div class="swiper-slide">
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="images/ficus.jpg" alt="Фикус" class="plant-img">
+                                <div class="plant-overlay">
+                                    <h3 class="plant-title">Фикус</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Слайд 4 -->
+                    <div class="swiper-slide">
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="images/orchid.jpg" alt="Орхидея" class="plant-img">
+                                <div class="plant-overlay">
+                                    <h3 class="plant-title">Орхидея</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Слайд 5 -->
+                    <div class="swiper-slide">
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="images/cactus.jpg" alt="Кактус" class="plant-img">
+                                <div class="plant-overlay">
+                                    <h3 class="plant-title">Кактус</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Слайд 6 -->
+                    <div class="swiper-slide">
+                        <div class="plant-card">
+                            <div class="plant-image">
+                                <img src="images/suculent.jpg" alt="Суккулент" class="plant-img">
+                                <div class="plant-overlay">
+                                    <h3 class="plant-title">Суккулент</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Пагинация -->
+                <div class="swiper-pagination slider-pagination"></div>
+            </div>
+
+            <button class="slider-nav slider-next">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Кнопка каталога -->
+        <div class="container mt-5 text-center">
+            <a href="catalog.html" class="btn catalog-btn">
+                <i class="bi bi-flower2 me-2"></i>Смотреть все растения
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Секция "О нашем проекте" -->
+    <section class="about-project-simple">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-7 bg-success text-white">
+                    <div class="p-5 p-lg-6 p-xl-7 h-100 d-flex align-items-center justify-content-center">
+                        <div class="about-content text-center">
+                            <h2 class="mb-4">О нашем проекте</h2>
+                            <p class="fs-5 mb-4">
+                                «База знаний о домашних растениях» — это ваш персональный помощник и исчерпывающий гид в
+                                мире комнатного цветоводства. Наш сайт создан для того, чтобы сделать уход за зелёными
+                                питомцами простым, понятным и эффективным.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="about-image">
+                        <img src="images/plants-line.jpg" alt="Домашние растения" class="img-fluid h-100 w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Подвал сайта -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="brand-text">ЗЕЛЁНЫЙ КАЛЕНДАРЬ</span>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <div class="footer-message">
+                    <i class="bi bi-heart-fill"></i>
+                    <span>С любовью о ваших растениях</span>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 База знаний о домашних растениях с подбором графика полива
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>

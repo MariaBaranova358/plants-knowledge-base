@@ -1,0 +1,199 @@
+// Секция "О нашем проекте"
+.about-project-simple {
+    overflow: hidden;
+    background-color: $light-bg;
+     
+    @media (max-width: 992px) {
+       margin-bottom: 0;
+
+    }
+
+    @media (max-width: 768px) {
+       margin-bottom: 0;
+    }
+    
+    .bg-success {
+        background: $light-green !important;
+    }
+}
+
+.col-lg-7 {
+    &.bg-success {
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    }
+    
+    .p-5 {
+        padding: 3rem !important;
+        
+        @media (max-width: 1200px) {
+            padding: 2.5rem !important;
+        }
+        
+        @media (max-width: 992px) {
+            padding: 2rem !important;
+        }
+        
+        @media (max-width: 576px) {
+            padding: 1.5rem !important;
+        }
+    }
+}
+
+
+.about-content {
+    h2 {
+        color: $text;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        
+        @media (max-width: 1200px) {
+            font-size: 2.25rem;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+        
+        @media (max-width: 576px) {
+            font-size: 1.75rem;
+        }
+    }
+    
+    p {
+        color: $text;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        
+        &.fs-5 {
+            font-size: 1.25rem;
+            
+            @media (max-width: 768px) {
+                font-size: 1.15rem;
+            }
+        }
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.about-image {
+    height: 100%;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, $shadow, transparent);
+        z-index: 1;
+        pointer-events: none;
+        
+        @media (max-width: 992px) {
+            background: linear-gradient(to bottom, $shadow, transparent);
+        }
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        min-height: 500px;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.8s ease;
+        
+        &:hover {
+            transform: scale(1.03);
+        }
+        
+        @media (max-width: 992px) {
+            min-height: 400px;
+        }
+        
+        @media (max-width: 576px) {
+            min-height: 300px;
+        }
+    }
+}
+
+// Адаптация для мобильных
+@media (max-width: 992px) {
+    .about-project-simple {
+        .col-lg-7,
+        .col-lg-5 {
+            width: 100%;
+        }
+        
+        .col-lg-7 {
+            min-height: auto;
+            height: auto !important;
+        }
+        
+        .about-image {
+            height: 400px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .about-image {
+        height: 300px;
+    }
+}
+
+// Декоративный элемент
+.about-content {
+    position: relative;
+    z-index: 2;
+    
+
+}
+
+// Анимация появления
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.col-lg-7 {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.col-lg-5 {
+    animation: slideInRight 0.8s ease-out 0.3s both;
+}
+
+.plant-info-bg {
+    background: $success !important;
+    
+    .about-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
