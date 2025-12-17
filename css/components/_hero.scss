@@ -4,7 +4,7 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-    margin-top: 76px;
+    margin-top: 66px;
     background: linear-gradient(rgba(71, 71, 71, 0.6),
             rgba(103, 103, 103, 0.4)), url('../images/banner.jpg');
 
@@ -44,7 +44,7 @@
 
     @media (max-width: 992px) {
         height: 500px;
-        margin-top: 56px;
+        margin-top: 44px;
 
         h1 {
             font-size: 2.5rem;

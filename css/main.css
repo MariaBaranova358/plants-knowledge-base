@@ -5,7 +5,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin-top: 76px;
+  margin-top: 66px;
   background: linear-gradient(rgba(71, 71, 71, 0.6), rgba(103, 103, 103, 0.4)), url("../images/banner.jpg");
   background-position: center;
   background-size: cover;
@@ -37,7 +37,7 @@
 @media (max-width: 992px) {
   .hero-banner {
     height: 500px;
-    margin-top: 56px;
+    margin-top: 44px;
   }
   .hero-banner h1 {
     font-size: 2.5rem;
@@ -72,12 +72,47 @@
   background: rgba(147, 162, 103, 0.7);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+  min-height: 80px;
 }
 .navbar-plant .navbar-brand {
   font-weight: 600;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease;
 }
 .navbar-plant .navbar-brand:hover {
   color: #1a252f;
+}
+.navbar-plant .navbar-brand img {
+  height: 70px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+@media (min-width: 992px) {
+  .navbar-plant .navbar-brand img {
+    height: 70px;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  .navbar-plant .navbar-brand img {
+    height: 60px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-plant .navbar-brand img {
+    height: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .navbar-plant .navbar-brand img {
+    height: 45px;
+    margin-right: 0;
+  }
+}
+@media (max-width: 360px) {
+  .navbar-plant .navbar-brand img {
+    height: 40px;
+  }
 }
 .navbar-plant .nav-link {
   color: #485935;
@@ -93,15 +128,61 @@
   color: #485935;
   letter-spacing: 0.5px;
 }
+@media (max-width: 991px) {
+  .navbar-plant .nav-link {
+    font-size: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-plant .nav-link {
+    font-size: 18px;
+    padding: 0.5rem 0.75rem;
+  }
+}
 .navbar-plant .navbar-toggler {
   border-color: rgba(44, 62, 80, 0.2);
+  padding: 0.25rem 0.5rem;
+  width: 44px;
+  height: 44px;
+}
+.navbar-plant .navbar-toggler .navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 480px) {
+  .navbar-plant .navbar-toggler {
+    width: 40px;
+    height: 40px;
+  }
+  .navbar-plant .navbar-toggler .navbar-toggler-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-plant .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 @media (max-width: 991px) {
+  .navbar-plant {
+    min-height: 70px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
   .navbar-plant .navbar-collapse {
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 0.5rem;
     margin-top: 1rem;
     padding: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .navbar-plant {
+    min-height: 65px;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
   }
 }
 

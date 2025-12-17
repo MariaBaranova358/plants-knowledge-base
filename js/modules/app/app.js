@@ -11,6 +11,3 @@ function setupGlobalListeners() {
     window.addEventListener('resize', handleResize);
 }
 
-function handleResize() {
-    console.log('Размер окна изменён:', window.innerWidth);
-}
