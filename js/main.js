@@ -5,8 +5,6 @@ import { initializeSlider } from './modules/features/slider.js';
 
 // Точка входа приложения
 document.addEventListener('DOMContentLoaded', function () {
-
-
     initializeApp();
 
     const currentPage = window.location.pathname;
