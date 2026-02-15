@@ -1,0 +1,128 @@
+.privacy-policy-page {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  min-height: calc(100vh - 300px);
+  background-color: $white;
+}
+
+.privacy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: $white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px $shadow;
+  padding: 40px;
+}
+
+.privacy-title {
+  color: $text;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid $success;
+}
+
+.privacy-section {
+  margin-bottom: 30px;
+
+  h2 {
+    color: $footer-text;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: 25px;
+  }
+
+  h3 {
+    color: lighten($footer-text, 10%);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  p {
+    color: $text;
+    line-height: 1.7;
+    margin-bottom: 15px;
+  }
+
+  ul,
+  ol {
+    color: $text;
+    margin-bottom: 15px;
+    padding-left: 25px;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: $success;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.privacy-note {
+  background-color: $light-green;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+  border-left: 4px solid $success;
+
+  p {
+    margin-bottom: 0;
+    color: $text;
+  }
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: $success;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    color: $footer-text;
+    text-decoration: underline;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.last-updated {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #dee2e6;
+}
+
+@media (max-width: 768px) {
+  .privacy-policy-page {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .privacy-container {
+    padding: 25px;
+  }
+
+  .privacy-title {
+    font-size: 2rem;
+  }
+
+  .privacy-section h2 {
+    font-size: 1.3rem;
+  }
+}

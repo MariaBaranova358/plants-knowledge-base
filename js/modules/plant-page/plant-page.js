@@ -128,7 +128,7 @@ function setupModalListeners() {
     calculateBtn.addEventListener('click', async () => {
         const urlParams = new URLSearchParams(window.location.search);
         const plantId = parseInt(urlParams.get('id')) || 1;
-
+        ym(106766506,'reachGoal','calculateWater')
         // Получаем растение, чтобы извлечь категорию
         try {
             const plant = await fetchPlantById(plantId);

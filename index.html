@@ -26,6 +26,21 @@
 
 
     <link rel="stylesheet" href="css/main.css">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106766506', 'ym');
+
+        ym(106766506, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/106766506" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -284,10 +299,90 @@
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
 
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script type="module" src="js/main.js"></script>
+
+    <!-- Блок оповещения о сборе статистики -->
+    <div class="cookie-notification cookie-notification_hidden_yes">
+        <div class="cookie-notification__header">Предупреждение о сборе статистики</div>
+        <div class="cookie-notification__body">
+            <p>Этот сайт собирает статистику посещения и данные посетителей.</p>
+            <p><a href="/privacy-policy.html" style="color: #fff; text-decoration: underline;">Политика конфиденциальности</a></p>
+        </div>
+        <div class="cookie-notification__buttons">
+            <button class="cookie-notification__button" id="yesCookie">Я согласен</button>
+        </div>
+    </div>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js"></script>
+
+    <!-- Скрипт для управления оповещением -->
+    <script type="text/javascript">
+        // Ждем загрузки страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            // Номер вашего счетчика
+            var counterId = 106766506;  // Я взял из вашего кода в head
+            
+            var messageElement = document.querySelector('.cookie-notification');
+            
+            // Функции для работы с классами
+            function addClass(o, c) {
+                if (!o) return;
+                var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g");
+                if (re.test(o.className)) return;
+                o.className = (o.className + " " + c).replace(/\s+/g, " ").replace(/(^ | $)/g, "");
+            }
+            
+            function removeClass(o, c) {
+                if (!o) return;
+                var re = new RegExp('(^|\\s)' + c + '(\\s|$)', 'g');
+                o.className = o.className.replace(re, '$1').replace(/\s+/g, ' ').replace(/(^ | $)/g, '');
+            }
+            
+            function hideMessage() {
+                if (messageElement) {
+                    addClass(messageElement, 'cookie-notification_hidden_yes');
+                }
+            }
+            
+            function showMessage() {
+                if (messageElement) {
+                    removeClass(messageElement, 'cookie-notification_hidden_yes');
+                }
+            }
+            
+            function saveAnswer() {
+                hideMessage();
+                // Сохраняем cookie на год
+                Cookies.set('agreement', '1', { expires: 365, path: '/' });
+            }
+            
+            function initCounter() {
+                // Инициализируем счетчик, если функция ym существует
+                if (typeof ym === 'function') {
+                    ym(counterId, 'init', {});
+                }
+                saveAnswer();
+            }
+            
+            // Проверяем cookie и показываем/скрываем плашку
+            if (!Cookies.get('agreement')) {
+                // Если нет согласия - показываем плашку
+                showMessage();
+            } else {
+                // Если согласие есть - сразу скрываем плашку
+                hideMessage();
+                // Счетчик уже инициализирован в head, ничего не делаем
+            }
+            
+            // Обработчик нажатия кнопки
+            var yesButton = document.querySelector('#yesCookie');
+            if (yesButton) {
+                yesButton.addEventListener('click', function() {
+                    initCounter();
+                });
+            }
+        });
+    </script>
 
 </body>
 
