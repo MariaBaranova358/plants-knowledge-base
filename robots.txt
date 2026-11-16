@@ -1,0 +1,43 @@
+# Адрес: https://mariabaranova358.github.io/plants-knowledge-base/
+# Хостинг: GitHub Pages 
+
+# ---------------------------------------------------------
+# Блок для робота Яндекса
+# ---------------------------------------------------------
+User-agent: Yandex
+# Разрешаем индексировать весь сайт
+Allow: /plants-knowledge-base/
+
+# Запрещаем служебные страницы 
+Disallow: /plants-knowledge-base/admin/
+Disallow: /plants-knowledge-base/tmp/
+
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+
+# ---------------------------------------------------------
+# Блок для робота Google
+# ---------------------------------------------------------
+User-agent: Googlebot
+Allow: /plants-knowledge-base/
+Disallow: /plants-knowledge-base/admin/
+Disallow: /plants-knowledge-base/tmp/
+
+# ---------------------------------------------------------
+# Блок для всех остальных поисковых роботов
+# ---------------------------------------------------------
+User-agent: *
+Allow: /plants-knowledge-base/
+Disallow: /plants-knowledge-base/admin/
+Disallow: /plants-knowledge-base/tmp/
+
+# ---------------------------------------------------------
+# Запрет для AI-краулеров (сбор контента для обучения ИИ)
+# ---------------------------------------------------------
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
